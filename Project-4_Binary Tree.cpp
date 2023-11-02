@@ -6,18 +6,18 @@ class Stack;
 class Tree
 {
 	private:
-    	char data;
-   	    Tree*Left;
-	    Tree*Right;
-    public:
-        Tree*create(char);
-        Tree*CreateTree(char[]);
-        void inorderRecursive(Tree*);
-        void preorderRecursive(Tree*);
-        void postorderRecursive(Tree*);
-        void inorderIterative(Tree*);   
-        void postorderIterative(Tree*);  
-        void preorderIterative(Tree*);
+    		char data;
+   	    	Tree*Left;
+	    	Tree*Right;
+    	public:
+       		Tree*create(char);
+		Tree*CreateTree(char[]);
+        	void inorderRecursive(Tree*);
+        	void preorderRecursive(Tree*);
+        	void postorderRecursive(Tree*);
+        	void inorderIterative(Tree*);   
+        	void postorderIterative(Tree*);  
+        	void preorderIterative(Tree*);
 };
 
 class Stack
@@ -184,7 +184,7 @@ void Tree :: postorderIterative(Tree*curr)
     int flag;
 	Stack s;
 	do
-    {
+    	{
 		while(curr!= NULL)
 		{
 			s.push(curr , s.flag );
@@ -201,13 +201,13 @@ void Tree :: postorderIterative(Tree*curr)
 		{
 			s.push(curr,1);
 			if(curr->Right)
-            {
+            		{
 				curr = curr->Right;
-            }
+           		}
 			else
-            {
+            		{
 				curr = NULL;
-            }
+           		}
 		}
 	}while(s.empty()!=0);
 }
@@ -232,30 +232,30 @@ int main()
     	cin>>ch;
 		switch(ch)
 		{
-            case 1:
-                t.inorder(root);
-                cout<<"\n";
+           		case 1:
+                		t.inorder(root);
+                		cout<<"\n";
 				break;
-            case 2:
-		        t.nrinorder(root);
-                cout<<"\n";
+            		case 2:
+		        	t.nrinorder(root);
+                		cout<<"\n";
 				break;
-            case 3:
-                t.preorder(root);
-                cout<<"\n";
-			    break;
-            case 4:
-                t.nrpreorder(root);
-                cout<<"\n";
-	            break;
-            case 5:
-                t.postorder(root);
-                cout<<"\n";
+            		case 3:
+                		t.preorder(root);
+                		cout<<"\n";
+			    	break;
+            		case 4:
+                		t.nrpreorder(root);
+                		cout<<"\n";
+	            		break;
+            		case 5:
+                		t.postorder(root);
+                		cout<<"\n";
 				break;
-            case 6:
-	        	t.nrpostorder(root);
-                cout<<"\n";	
-			    break;
+            		case 6:
+	        		t.nrpostorder(root);
+                		cout<<"\n";	
+			    	break;
 		}						
 	}while(ch!=7);
  	return 0;
