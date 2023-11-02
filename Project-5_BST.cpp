@@ -4,13 +4,13 @@ using namespace std;
 class Tree
 {
 	private:
-			int data;
+		int data;
    	        Tree*root;
    	        Tree*parent;
    	        Tree*left;
-    	    Tree*right;
-    	    Tree*current;
-    public:
+    	    	Tree*right;
+    	    	Tree*current;
+    	public:
 		Tree()
 		{
 			root=NULL;
@@ -85,7 +85,7 @@ void Tree :: Remove(Tree*current , int key)
 {
 	int temp;
 	//Case 1:
-    if(current->left == NULL && current->right == NULL)
+    	if(current->left == NULL && current->right == NULL)
 	{
 		if(parent->left == current)
 		{
