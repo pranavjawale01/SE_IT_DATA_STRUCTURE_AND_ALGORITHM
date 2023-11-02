@@ -19,6 +19,10 @@ class Tree
 		void Insert(Tree* , int);
 		void Search(Tree* , int);
 		void Remove(Tree* , int);
+		void InorderTraversal(Tree*);
+		void PostorderTraversal(Tree*);
+		void PreorderTraversal(Tree*);
+		void Display(Tree*);
 };
 
 Tree*Tree :: Create(int a)
@@ -147,41 +151,85 @@ void Tree :: Remove(Tree*current , int key)
 	}
 }
 
+void Tree::InorderTraversal(Tree* current)
+{
+	if (current != NULL)
+	{
+		InorderTraversal(current->left);
+		cout << current->data << " ";
+		InorderTraversal(current->right);
+	}
+}
+
+void Tree::PostorderTraversal(Tree* current)
+{
+	if (current != NULL)
+	{
+		PostorderTraversal(current->left);
+		PostorderTraversal(current->right);
+		cout << current->data << " ";
+	}
+}
+
+void Tree::PreorderTraversal(Tree* current)
+{
+	if (current != NULL)
+	{
+		cout << current->data << " ";
+		PreorderTraversal(current->left);
+		PreorderTraversal(current->right);
+	}
+}
+
+void Tree::Display(Tree* current)
+{
+	cout << "\nInorder Traversal: ";
+	InorderTraversal(current);
+
+	cout << "\nPostorder Traversal: ";
+	PostorderTraversal(current);
+
+	cout << "\nPreorder Traversal: ";
+	PreorderTraversal(current);
+
+	cout << endl;
+}
+
 int main()
 {
-        int key, a , ch;
-        Tree*current;
-        Tree T;
-        cout<<"\nCreate Binary Search Tree ";
-        T.Create(a);
-        do
-        {
-        	cout<<"\n1.Insert \n2.Search \n3.Delete \n4.Inorder Traversal \n5.Postorder Traversal \n6.Preorder Traversal \n7.Display \n8.Exit"<<endl;
-        	cin>>ch;
-        	switch(ch)
-        	{
-        		case 1:
-        			T.Insert(current , key);
-        			break;
-        		case 2:
-        			T.Search(current , key);
-        			break;
-        		case 3:
-        			T.Remove(current , key);
-        			break;
-        		case 4:
-        			//T.Traversal
-        			break;
-        		case 5:
-        		        
-        			break;
-        		case 6:
-        		          
-        			break;
-        		case 7:
-        		        
-        			break;
-        	}
-        }while(ch!=8);
- 	return 0;
+	int key, a, ch;
+	Tree* current;
+	Tree T;
+	cout << "\nCreate Binary Search Tree ";
+	T.Create(a);
+	do
+	{
+		cout << "\n1.Insert \n2.Search \n3.Delete \n4.Inorder Traversal \n5.Postorder Traversal \n6.Preorder Traversal \n7.Display \n8.Exit" << endl;
+		cin >> ch;
+		switch (ch)
+		{
+		case 1:
+			T.Insert(current, key);
+			break;
+		case 2:
+			T.Search(current, key);
+			break;
+		case 3:
+			T.Remove(current, key);
+			break;
+		case 4:
+			T.InorderTraversal(current);
+			break;
+		case 5:
+			T.PostorderTraversal(current);
+			break;
+		case 6:
+			T.PreorderTraversal(current);
+			break;
+		case 7:
+			T.Display(current);
+			break;
+		}
+	} while (ch != 8);
+	return 0;
 }
